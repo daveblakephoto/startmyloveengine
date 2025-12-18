@@ -49,7 +49,7 @@ body {
 
 .hero__subtitle-highlight {
   color: #ffb7b2;
-  text-decoration: none;
+  text-decoration: underline;
   white-space: nowrap;
 }
 
@@ -207,6 +207,11 @@ body {
   margin: 0;
   padding: 0.4rem 1rem;
   background: rgba(6, 6, 6, 0.2);
+}
+
+.site-footer a {
+  color: #ffb7b2;
+  text-decoration: none;
 }
 
 .site-footer__line,
