@@ -148,11 +148,20 @@ body {
 
   .hero__content {
     max-width: none;
-    margin-top: 6.5rem;
+    margin-top: 5.25rem;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .hero__subtitle {
+    font-size: 1.05rem;
   }
 
   .hero__subtitle,
@@ -161,12 +170,14 @@ body {
   }
 
   .hero__body {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .hero__cta {
-    --heart-size: 150px;
-    margin-top: 1rem;
+    --heart-size: 135px;
+    margin-top: 1.35rem;
+    margin-left: 0.3rem;
   }
 
   .site-footer {
