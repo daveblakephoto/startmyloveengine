@@ -7,7 +7,8 @@ body {
   margin: 0;
   min-height: 100vh;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #000;
   color: #fff;
 }
@@ -143,12 +144,12 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 1.25rem 1.1rem 4.25rem;
+    padding: 1.35rem 1.15rem 4.5rem;
   }
 
   .hero__content {
     max-width: none;
-    margin-top: 4.25rem;
+    margin-top: clamp(4rem, 17vw, 6.75rem);
   }
 
   .hero__eyebrow {
@@ -172,13 +173,13 @@ body {
   .hero__body {
     font-size: 0.92rem;
     line-height: 1.5;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero__cta {
     --heart-size: 135px;
-    margin-top: 0.6rem;
-    margin-left: 0.15rem;
+    margin-top: 0.45rem;
+    margin-left: 0;
   }
 
   .site-footer {
