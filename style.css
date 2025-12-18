@@ -115,7 +115,38 @@ body {
 }
 @media (min-width: 601px) {
   .hero {
-    background-position: center -320px; /* raise the image */
+    background-position: center -320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1.5rem 7rem;
+  }
+
+  .hero__content {
+    max-width: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .hero__subtitle,
+  .hero__body {
+    max-width: 90vw;
+  }
+
+  .hero__body {
+    font-size: 0.95rem;
+  }
+
+  .hero__cta {
+    --heart-size: 150px;
+  }
+
+  .site-footer {
+    width: calc(100% - 2rem);
   }
 }
 
@@ -129,16 +160,30 @@ body {
   color: rgba(255, 255, 255, 0.95);
   font-size: 0.9rem;
   pointer-events: auto;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.30);
 }
 
 .site-footer p {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0.2rem .4rem;
-  background: rgba(6, 6, 6, 0.05);
-  //border-radius: 999px;
-  backdrop-filter: blur(6px);
+  padding: 0.4rem 1rem;
+  background: rgba(6, 6, 6, 0.2);
+  /* border-radius: 999px; */
+  /* backdrop-filter: blur(6px); */
+}
+
+.site-footer__line,
+.site-footer__note {
+  display: block;
+}
+
+.site-footer__note {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .site-footer a {
