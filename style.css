@@ -143,12 +143,12 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 2rem 1.5rem 7rem;
+    padding: 1.5rem 1.25rem 5rem;
   }
 
   .hero__content {
     max-width: none;
-    margin-top: 12rem;
+    margin-top: 6.5rem;
   }
 
   .hero h1 {
@@ -166,10 +166,12 @@ body {
 
   .hero__cta {
     --heart-size: 150px;
+    margin-top: 1rem;
   }
 
   .site-footer {
-    width: calc(100% - 2rem);
+    width: calc(100% - 2.5rem);
+    bottom: 1rem;
   }
 }
 
