@@ -43,13 +43,35 @@ body {
 .hero__subtitle {
   font-size: 1.3rem;
   margin: 0.75rem 0 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(255, 255, 255);
+}
+
+.hero__subtitle-highlight {
+  color: #ffb7b2;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .hero__body {
   margin-bottom: 2.5rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgb(255, 255, 255);
+}
+
+.hero__body-highlight {
+  display: inline;
+  padding: 0.22rem 0.35rem;
+  margin: 0 -0.35rem;
+  background: rgba(85, 131, 192, 0.327);
+  color: #fff;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hero__body-highlight::selection,
+.hero__body-highlight::-moz-selection {
+  background: rgba(85, 132, 192, 0.85);
+  color: #fff;
 }
 
 .hero__cta {
@@ -126,6 +148,7 @@ body {
 
   .hero__content {
     max-width: none;
+    margin-top: 12rem;
   }
 
   .hero h1 {
@@ -187,7 +210,7 @@ body {
 }
 
 .site-footer a {
-  color: #ffb7b2;
+  color: #ffffff;
   text-decoration: none;
 }
 
