@@ -143,12 +143,12 @@ body {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 1.5rem 1.25rem 5rem;
+    padding: 1.25rem 1.1rem 4.25rem;
   }
 
   .hero__content {
     max-width: none;
-    margin-top: 5.25rem;
+    margin-top: 4.25rem;
   }
 
   .hero__eyebrow {
@@ -172,12 +172,13 @@ body {
   .hero__body {
     font-size: 0.92rem;
     line-height: 1.5;
+    margin-bottom: 1.75rem;
   }
 
   .hero__cta {
     --heart-size: 135px;
-    margin-top: 1.35rem;
-    margin-left: 0.3rem;
+    margin-top: 0.6rem;
+    margin-left: 0.15rem;
   }
 
   .site-footer {
