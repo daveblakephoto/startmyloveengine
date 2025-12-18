@@ -184,7 +184,7 @@ body {
 
   .site-footer {
     width: calc(100% - 2.5rem);
-    bottom: 1rem;
+    bottom: 10rem;
   }
 }
 
@@ -207,8 +207,6 @@ body {
   margin: 0;
   padding: 0.4rem 1rem;
   background: rgba(6, 6, 6, 0.2);
-  /* border-radius: 999px; */
-  /* backdrop-filter: blur(6px); */
 }
 
 .site-footer__line,
