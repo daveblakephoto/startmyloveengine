@@ -174,7 +174,7 @@ body {
 }
 @media (min-width: 601px) {
   .hero {
-    background-position: center -320px;
+    background-position: 48% 10%;
   }
 }
 
@@ -447,6 +447,10 @@ body.about-page {
   color: rgba(255, 255, 255, 0.92);
 }
 
+.about-page .hero__eyebrow {
+  background: none;
+}
+
 .about-section {
   padding: 4rem 6vw;
   background: #050505;
@@ -509,7 +513,12 @@ body.about-page {
 .about-details__value {
   margin: 0.4rem 0 0;
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--accent-pink);
+}
+
+.about-page .about-details__value {
+  /* color: var(--accent-pink) !important; */
+  font-weight: bold;
 }
 
 .about-grid {
@@ -564,13 +573,23 @@ body.about-page {
 }
 
 .about-faq__item[open] summary {
-  color: var(--accent-pink);
+  /* color: var(--accent-pink); */
 }
 
 .about-faq__item p {
   margin: 0.85rem 0 0;
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.about-faq__list {
+  margin: 0.75rem 0 0.75rem 1.5rem;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.about-faq__list li {
+  margin-bottom: 0.45rem;
 }
 
 .about-section--cta {
