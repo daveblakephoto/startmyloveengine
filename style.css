@@ -185,7 +185,7 @@ body {
 
   .hero__content {
     max-width: none;
-    margin-top: clamp(4rem, 17vw, 6.75rem);
+    margin-top: clamp(8rem, 17vw, 6.75rem);
   }
 
   .hero__eyebrow-row {
@@ -224,9 +224,15 @@ body {
   }
 
   .hero__cta {
-    --heart-size: 135px;
+    --heart-size: 125px;
     margin-top: 0.45rem;
     margin-left: 0;
+    font-size: 0.82rem;
+  }
+
+  .hero__cta span {
+    padding: 0 1rem;
+    transform: translateY(-8px);
   }
 }
 
