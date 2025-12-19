@@ -59,6 +59,7 @@
           "@type": "Organization",
           "@id": "https://startmyloveengine.com/#organization",
           "name": "StartMyLoveEngine",
+          "alternateName": ["Start My Love Engine"],
           "url": "https://startmyloveengine.com/",
           "logo": "https://startmyloveengine.com/images/StartMyLoveEngine%20-%20Wedding%20Elopements%20by%20Dave%20Blake.webp",
           "image": "https://startmyloveengine.com/images/StartMyLoveEngine%20-%20Wedding%20Elopements%20by%20Dave%20Blake.webp",
@@ -101,6 +102,7 @@
           "@id": "https://startmyloveengine.com/#website",
           "url": "https://startmyloveengine.com/",
           "name": "StartMyLoveEngine",
+          "alternateName": ["Start My Love Engine"],
           "description": "StartMyLoveEngine delivers bespoke elopement photography and cinematic films by Dave Blake for intimate, editorial celebrations.",
           "publisher": {
             "@id": "https://startmyloveengine.com/#organization"
@@ -163,8 +165,14 @@
 <body>
   <main class="hero" role="main">
     <div class="hero__content">
-      <p class="hero__eyebrow">Wedding Elopements</p>
-      <h1>StartMyLoveEngine</h1>
+      <div class="hero__eyebrow-row">
+        <p class="hero__eyebrow">Wedding Elopements</p>
+        <nav class="hero__nav" aria-label="Primary navigation">
+          <a href="about/">About</a>
+          <a href="mailto:dave@dave-blake.com?subject=StartMyLoveEngine%20Enquiry">Enquire</a>
+        </nav>
+      </div>
+      <h1><span class="hero__title-highlight">Start</span>My<span class="hero__title-highlight">Love</span>Engine</h1>
       <p class="hero__subtitle">
         Elopement Photography &amp; Films
         <a
@@ -188,12 +196,15 @@
         <span>Enquire Now For 2026</span>
       </a>
     </div>
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--home">
       <p>
         <span class="site-footer__note">
           <a href="mailto:dave@dave-blake.com">dave@dave-blake.com</a> ·
-          <a href="tel:+61402144251">+61 402 144 251</a> ·
-          <a href="https://www.instagram.com/startmyloveengine/" target="_blank" rel="noopener noreferrer">@startmyloveengine</a>
+          <a href="tel:+61402144251">+61&#8239;402&#8239;144&#8239;251</a> ·
+          <a class="site-footer__instagram" href="https://www.instagram.com/startmyloveengine/" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true" class="site-footer__icon"></span>
+            startmyloveengine
+          </a>
         </span>
       </p>
     </footer>
