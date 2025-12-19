@@ -38,6 +38,7 @@ body {
   font-size: 0.9rem;
   margin: 0;
   color: var(--accent-pink);
+  background: rgb(85 131 192 / 76%);
 }
 
 .hero__eyebrow-row {
@@ -58,13 +59,13 @@ body {
 }
 
 .hero__nav a {
-  color: var(--accent-pink);
-  text-decoration: none;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .hero__nav a:hover,
 .hero__nav a:focus-visible {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 .hero h1 {
