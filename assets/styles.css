@@ -899,6 +899,36 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
+.footer-social-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: var(--spacing-sm);
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-social-handle {
+  font-weight: 500;
+}
+
+.footer-social:hover {
+  color: var(--color-accent);
+}
+
 .editorial-hero {
   position: relative;
   height: 60vh;
