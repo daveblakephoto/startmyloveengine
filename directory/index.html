@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <title>Directory | StartMyLoveEngine - Editorial Wedding Directory</title>
+  <meta name="description" content="Discover exceptional wedding vendors in our curated directory.">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:title" content="Directory | StartMyLoveEngine - Editorial Wedding Directory">
+  <meta property="og:description" content="Discover exceptional wedding vendors in our curated directory.">
+  <meta property="og:image" content="https://startmyloveengine.com/images/StartMyLoveEngine%20-%20Wedding%20Elopements%20by%20Dave%20Blake.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://startmyloveengine.com/images/StartMyLoveEngine%20-%20Wedding%20Elopements%20by%20Dave%20Blake.webp">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../" class="nav-logo">StartMyLoveEngine</a>
+      <div class="nav-links">
+        <a href="../">Home</a><a href="../directory">Directory</a><a href="../editorial">Editorial</a><a href="../about">About</a><a href="../apply">Apply</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="directory-header">
+    <h1>Vendor Directory</h1>
+    <p>Discover exceptional vendors for your celebration</p>
+  </section>
+
+  <section class="directory-filters">
+    <div class="filter-container">
+      <input type="text" id="search" placeholder="Search vendors..." class="search-input">
+      
+      <div>
+        <p class="filter-label">Category</p>
+        <div class="category-filters">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="Photographer">Photographer</button><button class="filter-btn" data-category="Florist">Florist</button><button class="filter-btn" data-category="Planner">Planner</button><button class="filter-btn" data-category="Venue">Venue</button><button class="filter-btn" data-category="Jewellery">Jewellery</button><button class="filter-btn" data-category="Dress">Dress</button><button class="filter-btn" data-category="HMUA">HMUA</button><button class="filter-btn" data-category="Videography">Videography</button><button class="filter-btn" data-category="Stationery">Stationery</button><button class="filter-btn" data-category="Catering">Catering</button>
+        </div>
+      </div>
+      
+      <div class="location-filters">
+        <div>
+          <p class="filter-label">Location</p>
+          <select id="cityFilter" class="filter-select">
+            <option value="all">All Locations</option>
+            <option value="Brisbane">Brisbane</option><option value="Byron Bay">Byron Bay</option><option value="London">London</option><option value="Los Angeles">Los Angeles</option><option value="Madrid">Madrid</option><option value="New York">New York</option><option value="Paris">Paris</option><option value="Rome">Rome</option><option value="Sydney">Sydney</option>
+          </select>
+        </div>
+        <div>
+          <p class="filter-label">Country</p>
+          <select id="countryFilter" class="filter-select">
+            <option value="all">All Countries</option>
+            <option value="Australia">Australia</option><option value="France">France</option><option value="Italy">Italy</option><option value="Spain">Spain</option><option value="United Kingdom">United Kingdom</option><option value="United States">United States</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="directory-grid">
+    
+      <a href="./dave-blake" class="vendor-card vendor-card-clickable" data-category="Photographer" data-cities="Brisbane,Byron Bay" data-country="Australia" data-vendor-id="dave-blake" id="dave-blake">
+        <img src="https://startmyloveengine.com/images/StartMyLoveEngine%20-%20Wedding%20Elopements%20by%20Dave%20Blake.webp" alt="Dave Blake" style="object-position: 45% 26%;">
+        <div class="vendor-card-body">
+          <span class="badge">Featured</span>
+          <h3>Dave Blake</h3>
+          <p class="vendor-meta">Photographer • Brisbane & Byron Bay, Australia</p>
+          <p class="vendor-tagline">Capturing authentic moments with editorial elegance</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-002" class="vendor-card vendor-card-clickable" data-category="Florist" data-cities="Paris" data-country="France" data-vendor-id="vendor-002" id="vendor-002">
+        <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800&auto=format&fit=crop" alt="Bloom & Co" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Bloom & Co</h3>
+          <p class="vendor-meta">Florist • Paris, France</p>
+          <p class="vendor-tagline">Botanical artistry for timeless celebrations</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-003" class="vendor-card vendor-card-clickable" data-category="Planner" data-cities="New York" data-country="United States" data-vendor-id="vendor-003" id="vendor-003">
+        <img src="https://019baaf0-95c0-7afe-9cb8-380c3902782f.mochausercontent.com/wedding-atelier.png" alt="The Wedding Atelier" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>The Wedding Atelier</h3>
+          <p class="vendor-meta">Planner • New York, United States</p>
+          <p class="vendor-tagline">Curating extraordinary experiences</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-004" class="vendor-card vendor-card-clickable" data-category="Venue" data-cities="Rome" data-country="Italy" data-vendor-id="vendor-004" id="vendor-004">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&auto=format&fit=crop" alt="Villa Serena" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Villa Serena</h3>
+          <p class="vendor-meta">Venue • Rome, Italy</p>
+          <p class="vendor-tagline">Historic elegance in the Italian countryside</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-005" class="vendor-card vendor-card-clickable" data-category="Jewellery" data-cities="London" data-country="United Kingdom" data-vendor-id="vendor-005" id="vendor-005">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&auto=format&fit=crop" alt="Lumière Fine Jewellery" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Lumière Fine Jewellery</h3>
+          <p class="vendor-meta">Jewellery • London, United Kingdom</p>
+          <p class="vendor-tagline">Heirloom pieces for modern romantics</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-006" class="vendor-card vendor-card-clickable" data-category="Dress" data-cities="Paris" data-country="France" data-vendor-id="vendor-006" id="vendor-006">
+        <img src="https://019baaf0-95c0-7afe-9cb8-380c3902782f.mochausercontent.com/maison-blanc-bridal.png" alt="Maison Blanc Bridal" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Maison Blanc Bridal</h3>
+          <p class="vendor-meta">Dress • Paris, France</p>
+          <p class="vendor-tagline">Couture gowns for the discerning bride</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-007" class="vendor-card vendor-card-clickable" data-category="HMUA" data-cities="Los Angeles" data-country="United States" data-vendor-id="vendor-007" id="vendor-007">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop" alt="Grace & Glow" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Grace & Glow</h3>
+          <p class="vendor-meta">HMUA • Los Angeles, United States</p>
+          <p class="vendor-tagline">Natural beauty, elevated</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-008" class="vendor-card vendor-card-clickable" data-category="Videography" data-cities="Sydney" data-country="Australia" data-vendor-id="vendor-008" id="vendor-008">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop" alt="Motion & Muse Films" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Motion & Muse Films</h3>
+          <p class="vendor-meta">Videography • Sydney, Australia</p>
+          <p class="vendor-tagline">Cinematic storytelling for your wedding day</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-009" class="vendor-card vendor-card-clickable" data-category="Stationery" data-cities="London" data-country="United Kingdom" data-vendor-id="vendor-009" id="vendor-009">
+        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&auto=format&fit=crop" alt="Inked & Ivory" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>Inked & Ivory</h3>
+          <p class="vendor-meta">Stationery • London, United Kingdom</p>
+          <p class="vendor-tagline">Bespoke stationery with timeless charm</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+      <a href="./vendor-010" class="vendor-card vendor-card-clickable" data-category="Catering" data-cities="Madrid" data-country="Spain" data-vendor-id="vendor-010" id="vendor-010">
+        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&auto=format&fit=crop" alt="The Culinary Canvas" style="object-position: 50% 50%;">
+        <div class="vendor-card-body">
+          
+          <h3>The Culinary Canvas</h3>
+          <p class="vendor-meta">Catering • Madrid, Spain</p>
+          <p class="vendor-tagline">Artful cuisine for memorable celebrations</p>
+          <div class="vendor-card-links">
+            <span class="vendor-link-text">View Profile</span>
+          </div>
+        </div>
+      </a>
+    
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 StartMyLoveEngine. All rights reserved.</p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
