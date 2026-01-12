@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function filterVendors() {
     vendorCards.forEach(card => {
-      const category = card.getAttribute('data-category');
+      const category = card.getAttribute('data-category') || '';
+      const categories = category.split(',').map(item => item.trim()).filter(Boolean);
       const cities = card.getAttribute('data-cities')?.split(',').filter(c => c) || [];
       const country = card.getAttribute('data-country');
       const vendorName = card.querySelector('h3')?.textContent.toLowerCase() || '';
       const vendorTagline = card.querySelector('.vendor-tagline')?.textContent.toLowerCase() || '';
       
-      const matchesCategory = currentCategory === 'all' || category === currentCategory;
+      const matchesCategory = currentCategory === 'all' || categories.includes(currentCategory);
       const matchesCity = currentCity === 'all' || cities.includes(currentCity);
       const matchesCountry = currentCountry === 'all' || country === currentCountry;
       const matchesSearch = !searchTerm || 
