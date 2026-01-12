@@ -76,6 +76,36 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
 }
 
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+
+.nav-hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
 .hero {
   max-width: 900px;
   margin: 0 auto;
@@ -412,6 +442,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  display: block;
+}
+
+.spotlight-simple a {
+  display: block;
+  cursor: pointer;
 }
 
 .spotlight-content {
@@ -531,16 +567,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
 }
 
-.vendor-profile-body-link {
-  color: inherit;
-  text-decoration: underline;
-  font-size: inherit;
-}
-
-.vendor-profile-body-link:hover {
-  color: var(--color-primary);
-}
-
 .vendor-profile-text .emphasis {
   font-style: italic;
 }
@@ -588,6 +614,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .vendor-name-link:hover {
   color: var(--color-secondary);
+}
+
+.inline-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+  transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+  color: var(--color-secondary);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -959,12 +997,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .nav-hamburger {
+    display: flex;
+  }
+  
   .nav-links {
-    gap: var(--spacing-sm);
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background: var(--color-white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px var(--spacing-md) var(--spacing-md);
+    gap: var(--spacing-md);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 100;
+  }
+  
+  .nav-links.active {
+    right: 0;
   }
   
   .nav-links a {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: var(--spacing-xs) 0;
   }
   
   .directory-grid {
