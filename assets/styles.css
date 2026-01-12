@@ -906,6 +906,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: var(--spacing-sm);
   color: var(--color-secondary);
   font-size: 0.85rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-social {
@@ -927,6 +930,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-social:hover {
   color: var(--color-accent);
+}
+
+@media (max-width: 420px) {
+  .footer {
+    padding: var(--spacing-md) var(--spacing-md);
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .footer-social-row {
+    font-size: 0.78rem;
+    gap: 0.35rem;
+  }
+
+  .footer-social svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .editorial-hero {
