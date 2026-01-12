@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   max-width: 900px;
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
   text-align: center;
 }
 
