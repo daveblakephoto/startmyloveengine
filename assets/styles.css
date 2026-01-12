@@ -27,6 +27,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-secondary);
+  text-decoration-color: var(--color-secondary);
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--primary-font);
   font-weight: 600;
@@ -551,6 +561,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: var(--spacing-md);
 }
+
 
 .vendor-profile-hero-links {
   display: flex;
