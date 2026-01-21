@@ -421,7 +421,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .vendor-card-body {
-  padding: var(--spacing-md);
+  padding: var(--spacing-md) 0;
 }
 
 .badge {
@@ -548,6 +548,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(3rem, 6vw, 5rem);
   color: var(--color-white);
   margin-bottom: var(--spacing-xs);
+  letter-spacing: 0.02em;
 }
 
 .vendor-profile-category {
@@ -594,7 +595,139 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-secondary);
   margin-bottom: var(--spacing-lg);
   font-style: italic;
+  font-family: var(--primary-font);
   font-weight: 300;
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+.vendor-profile-intro {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  font-weight: 300;
+  background: rgba(255, 255, 255, 0.82);
+  padding: calc(var(--spacing-lg) * 0.1) var(--spacing-lg) calc(var(--spacing-lg) * 0.1) calc(var(--spacing-lg) * 0.7);
+  border-radius: 2px;
+  border-left: none;
+  margin: calc(var(--spacing-lg) * 0.07) 0 4rem 0;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+
+.vendor-profile-intro::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+.editorial-quote {
+  font-family: var(--primary-font);
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #666666;
+  position: relative;
+  padding: calc(var(--spacing-md) * 0.7) calc(var(--spacing-md) * 0.9) calc(var(--spacing-md) * 0.7) calc(var(--spacing-md) * 1.4);
+  margin: 0 0 2rem 0;
+  max-width: 60ch;
+}
+
+.editorial-quote::before,
+.editorial-quote::after {
+  position: absolute;
+  font-size: 6.5em;
+  color: #e5e5e5;
+  font-family: "Playfair Display", serif;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.editorial-quote::before {
+  content: '“';
+  left: -1.8rem;
+  top: -0.8rem;
+}
+
+.editorial-quote::after {
+  content: '”';
+  right: -1.3rem;
+  bottom: -3.7rem;
+}
+
+.editorial-quote p {
+  margin-bottom: calc(var(--spacing-sm) * 0.7);
+}
+
+.editorial-quote p:last-child {
+  margin-bottom: 0;
+}
+
+.editorial-quote .emphasis {
+  font-style: italic;
+}
+
+.vendor-profile-details {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1.3rem;
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+.vendor-profile-quote-block {
+  font-family: var(--primary-font);
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #666666;
+  position: relative;
+  padding-left: 4rem;
+  padding-right: 2rem;
+  margin: calc(var(--spacing-xl) * 1.5) 0;
+  max-width: 60ch;
+}
+
+.vendor-profile-quote-block::before,
+.vendor-profile-quote-block::after {
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 10rem;
+  color: rgba(0, 0, 0, 0.12);
+  line-height: 1;
+  z-index: 0;
+}
+
+.vendor-profile-quote-block::before {
+  content: '"';
+  left: 0;
+  top: -1rem;
+}
+
+.vendor-profile-quote-block::after {
+  content: '"';
+  right: 0;
+  bottom: -2.5rem;
+}
+
+.vendor-profile-quote-block p {
+  margin-bottom: calc(var(--spacing-lg) * 1.25);
+  position: relative;
+  z-index: 1;
+}
+
+.vendor-profile-quote-block p:last-child {
+  margin-bottom: 0;
+}
+
+.vendor-profile-quote-block .emphasis {
+  font-style: italic;
 }
 
 .vendor-profile-text {
@@ -613,8 +746,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .vendor-profile-details {
   max-width: 900px;
-  margin: 0 auto var(--spacing-xl);
-  padding: 0 var(--spacing-md);
+  margin: calc(var(--spacing-xl) * 0.325) auto calc(var(--spacing-xl) * 0.325);
+  padding: 0;
 }
 
 .vendor-profile-detail-grid {
@@ -672,6 +805,21 @@ h1, h2, h3, h4, h5, h6 {
   .vendor-profile-detail-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
+  }
+
+  .vendor-profile-intro {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-md) calc(var(--spacing-lg) * 0.7);
+    margin: var(--spacing-md) 0 3rem 0;
+  }
+
+  .editorial-quote {
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-md) calc(var(--spacing-md) * 1.2);
+    font-size: 1.15rem;
+  }
+
+  .editorial-quote::before,
+  .editorial-quote::after {
+    font-size: 7.4em;
   }
 }
 
