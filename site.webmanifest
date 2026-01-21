@@ -1,7 +1,7 @@
 {
   "name": "StartMyLoveEngine",
   "short_name": "S",
-  "description": "Discover exceptional wedding vendors with our curated directory. Find the perfect partners for your special day.",
+  "description": "Discover editorial-style wedding vendors with our curated directory. Find the perfect partners for your special day.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
