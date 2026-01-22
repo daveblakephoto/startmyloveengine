@@ -1121,6 +1121,12 @@ h1, h2, h3, h4, h5, h6 {
   gap: var(--spacing-md);
 }
 
+@media (max-width: 420px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .location-card {
   display: block;
   text-decoration: none;
@@ -1257,6 +1263,12 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: var(--spacing-lg);
+}
+
+@media (max-width: 420px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .article-card {
