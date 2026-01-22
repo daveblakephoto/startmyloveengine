@@ -1232,6 +1232,15 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 var(--spacing-md);
 }
 
+.editorial-nav-copy,
+.editorial-nav-links {
+  text-align: center;
+}
+
+.editorial-nav-links {
+  margin-top: 0.35rem;
+}
+
 .category-tags {
   display: flex;
   gap: var(--spacing-xs);
