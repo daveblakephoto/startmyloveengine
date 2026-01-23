@@ -1,3 +1,10 @@
+// Build click-tracked outbound URLs without exposing vendor destinations in hrefs.
+function buildTrackedUrl(vendorSlug, linkType, destinationUrl) {
+  const baseUrl = 'https://go.startmyloveengine.com/click';
+  const encodedDestination = encodeURIComponent(destinationUrl);
+  return `${baseUrl}?vendor=${vendorSlug}&type=${linkType}&to=${encodedDestination}`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('search');
   const filterButtons = document.querySelectorAll('.filter-btn');
@@ -66,6 +73,19 @@ document.addEventListener('DOMContentLoaded', function() {
       filterVendors();
     });
   }
+
+  document.querySelectorAll('[data-track-outbound]').forEach(link => {
+    const vendorSlug = link.getAttribute('data-vendor');
+    const linkType = link.getAttribute('data-type');
+    const destinationUrl = link.getAttribute('data-url');
+
+    if (vendorSlug && linkType && destinationUrl) {
+      // Route outbound vendor clicks through the tracking worker.
+      link.href = buildTrackedUrl(vendorSlug, linkType, destinationUrl);
+      link.target = '_blank';
+      link.rel = 'noopener';
+    }
+  });
   
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
