@@ -278,10 +278,54 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--spacing-sm);
 }
 
-.directory-header p {
-  font-size: 1.25rem;
+.directory-subhead {
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: var(--color-secondary);
   font-weight: 300;
+  opacity: 0.7;
+}
+
+.directory-divider {
+  width: 120px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 2.5rem auto 0;
+}
+
+.directory-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.directory-links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--color-primary);
+  position: relative;
+}
+
+.directory-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.directory-links a:hover::after {
+  opacity: 1;
 }
 
 .directory-filters {
