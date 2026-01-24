@@ -402,55 +402,79 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .vendor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .vendor-card.hidden {
   display: none;
 }
 
-.vendor-card img {
+.vendor-card-media {
   width: 100%;
   height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfbf9;
+}
+
+.vendor-card-media img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
+.vendor-card-media-letter {
+  background: #fbfbf9;
+  border: 1px solid #e7e3dc;
+}
+
+.vendor-card-letter {
+  font-family: var(--primary-font);
+  font-size: 5.5rem;
+  letter-spacing: 0.08em;
+  color: #c9c3bb;
+}
+
 .vendor-card-body {
-  padding: var(--spacing-md) 0;
+  padding: 1.75rem 1.75rem 2rem;
 }
 
 .badge {
   display: inline-block;
   background: var(--color-accent);
   color: var(--color-white);
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.85rem;
   border-radius: 2px;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.85rem;
 }
 
 .vendor-card-body h3 {
   font-size: 1.5rem;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 0.4rem;
 }
 
 .vendor-meta {
   color: var(--color-secondary);
   font-size: 0.85rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
+}
+
+.vendor-tagline {
+  margin-bottom: 1.25rem;
 }
 
 .vendor-card-links {
   display: flex;
   gap: var(--spacing-sm);
-  margin-top: var(--spacing-sm);
+  margin-top: 0.25rem;
 }
 
 .vendor-card-links a {

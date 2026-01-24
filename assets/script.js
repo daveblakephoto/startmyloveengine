@@ -16,6 +16,49 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentCity = 'all';
   let currentCountry = 'all';
   let searchTerm = '';
+
+  const tierRank = {
+    featured: 0,
+    paid: 1,
+    free: 2
+  };
+
+  function getVendorName(card) {
+    const dataName = card.getAttribute('data-vendor-name');
+    if (dataName) {
+      return dataName.trim();
+    }
+    return card.querySelector('h3')?.textContent.trim() || '';
+  }
+
+  function sortVendorCards() {
+    document.querySelectorAll('.directory-grid').forEach(grid => {
+      const cards = Array.from(grid.querySelectorAll('.vendor-card'));
+      cards.sort((a, b) => {
+        const tierA = tierRank[a.getAttribute('data-tier')] ?? tierRank.free;
+        const tierB = tierRank[b.getAttribute('data-tier')] ?? tierRank.free;
+        if (tierA !== tierB) {
+          return tierA - tierB;
+        }
+        const nameA = getVendorName(a);
+        const nameB = getVendorName(b);
+        return nameA.localeCompare(nameB, undefined, { sensitivity: 'base' });
+      });
+      cards.forEach(card => grid.appendChild(card));
+    });
+  }
+
+  function populateVendorLetters() {
+    document.querySelectorAll('.vendor-card-letter[data-letter]').forEach(letterEl => {
+      const card = letterEl.closest('.vendor-card');
+      if (!card) {
+        return;
+      }
+      const name = getVendorName(card);
+      const initial = name.trim().charAt(0).toUpperCase();
+      letterEl.textContent = initial || '?';
+    });
+  }
   
   function filterVendors() {
     vendorCards.forEach(card => {
@@ -72,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
       currentCountry = this.value;
       filterVendors();
     });
+  }
+
+  if (vendorCards.length > 0) {
+    populateVendorLetters();
+    sortVendorCards();
   }
 
   document.querySelectorAll('[data-track-outbound]').forEach(link => {
