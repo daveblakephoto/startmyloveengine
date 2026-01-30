@@ -148,6 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   document.querySelectorAll('[data-track-outbound]').forEach(link => {
+    if (link.dataset.analyticsBound === 'true') {
+      return;
+    }
+    link.dataset.analyticsBound = 'true';
     const vendorSlug = link.getAttribute('data-vendor') || pageVendorSlug;
     const linkType = link.getAttribute('data-type');
     const destinationUrl = link.getAttribute('data-url') || link.getAttribute('href');
@@ -166,6 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     link.addEventListener('click', function(event) {
+      if (event.defaultPrevented) {
+        return;
+      }
       if (vendorSlug && linkType) {
         trackClick({
           vendor: vendorSlug,
