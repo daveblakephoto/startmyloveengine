@@ -1,11 +1,8 @@
-// Build click-tracked outbound URLs without exposing vendor destinations in hrefs.
-function buildTrackedUrl(vendorSlug, linkType, destinationUrl) {
-  const baseUrl = 'https://go.startmyloveengine.com/click';
-  const encodedDestination = encodeURIComponent(destinationUrl);
-  return `${baseUrl}?vendor=${vendorSlug}&type=${linkType}&to=${encodedDestination}`;
-}
+import { trackClick, trackVisit } from '../lib/analytics.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+  const pageVendorSlug = document.body?.dataset.vendorSlug;
+  const pageVendorTier = document.body?.dataset.vendorTier || '';
   const searchInput = document.getElementById('search');
   const filterButtons = document.querySelectorAll('.filter-btn');
   const cityFilter = document.getElementById('cityFilter');
@@ -122,17 +119,59 @@ document.addEventListener('DOMContentLoaded', function() {
     sortVendorCards();
   }
 
-  document.querySelectorAll('[data-track-outbound]').forEach(link => {
-    const vendorSlug = link.getAttribute('data-vendor');
-    const linkType = link.getAttribute('data-type');
-    const destinationUrl = link.getAttribute('data-url');
+  if (pageVendorSlug) {
+    trackVisit({
+      vendor: pageVendorSlug,
+      page: 'profile',
+      tier: pageVendorTier
+    });
+  }
 
-    if (vendorSlug && linkType && destinationUrl) {
-      // Route outbound vendor clicks through the tracking worker.
-      link.href = buildTrackedUrl(vendorSlug, linkType, destinationUrl);
+  document.querySelectorAll('[data-track-outbound]').forEach(link => {
+    const vendorSlug = link.getAttribute('data-vendor') || pageVendorSlug;
+    const linkType = link.getAttribute('data-type');
+    const destinationUrl = link.getAttribute('data-url') || link.getAttribute('href');
+    const tier = link.getAttribute('data-tier') || pageVendorTier;
+
+    if (!destinationUrl) {
+      return;
+    }
+
+    link.href = destinationUrl;
+    if (!link.target) {
       link.target = '_blank';
+    }
+    if (!link.rel) {
       link.rel = 'noopener';
     }
+
+    link.addEventListener('click', function(event) {
+      if (vendorSlug && linkType) {
+        trackClick({
+          vendor: vendorSlug,
+          target: linkType,
+          tier
+        });
+      }
+
+      const isPrimaryClick = event.button === 0;
+      const hasModifier = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+      if (!isPrimaryClick || hasModifier) {
+        return;
+      }
+
+      event.preventDefault();
+      if (link.target === '_blank') {
+        const newWindow = window.open(destinationUrl, '_blank', 'noopener');
+        if (newWindow) {
+          newWindow.opener = null;
+        } else {
+          window.location.href = destinationUrl;
+        }
+      } else {
+        window.location.href = destinationUrl;
+      }
+    });
   });
   
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
