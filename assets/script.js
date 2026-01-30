@@ -1,7 +1,20 @@
-import { trackClick, trackVisit } from '../lib/analytics.js';
+import { primeAnalyticsConfig, trackClick, trackVisit } from '../lib/analytics.js';
+
+function getVendorSlugFromPage() {
+  // Primary source: data attribute; fallback: URL path (/directory/{slug}/).
+  const fromDataset = document.body?.dataset.vendorSlug;
+  if (fromDataset) {
+    return fromDataset;
+  }
+  const match = window.location.pathname.match(/^\/directory\/([^/]+)\/?$/);
+  return match ? match[1] : '';
+}
 
 document.addEventListener('DOMContentLoaded', function() {
-  const pageVendorSlug = document.body?.dataset.vendorSlug;
+  // Preload analytics config so visit validation uses the shared JSON allowlists.
+  primeAnalyticsConfig();
+  const hasVendorProfile = Boolean(document.querySelector('.vendor-profile-hero'));
+  const pageVendorSlug = getVendorSlugFromPage();
   const pageVendorTier = document.body?.dataset.vendorTier || '';
   const searchInput = document.getElementById('search');
   const filterButtons = document.querySelectorAll('.filter-btn');
@@ -119,11 +132,18 @@ document.addEventListener('DOMContentLoaded', function() {
     sortVendorCards();
   }
 
-  if (pageVendorSlug) {
+  if (hasVendorProfile && pageVendorSlug && pageVendorTier) {
     trackVisit({
       vendor: pageVendorSlug,
       page: 'profile',
       tier: pageVendorTier
+    });
+  } else if (hasVendorProfile) {
+    // Skip visits that can't be validated; log for visibility.
+    console.warn('analytics: visit skipped (missing vendor slug or tier)', {
+      vendor: pageVendorSlug || null,
+      tier: pageVendorTier || null,
+      url: window.location.href
     });
   }
 
