@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     link.addEventListener('click', function(event) {
-      if (event.defaultPrevented) {
-        return;
-      }
+      const isPrimaryClick = event.button === 0;
+      const hasModifier = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+
       if (vendorSlug && linkType) {
         trackClick({
           vendor: vendorSlug,
@@ -181,19 +181,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
 
-      const isPrimaryClick = event.button === 0;
-      const hasModifier = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
       if (!isPrimaryClick || hasModifier) {
         return;
       }
 
       event.preventDefault();
+      event.stopImmediatePropagation();
+
       if (link.target === '_blank') {
         const newWindow = window.open(destinationUrl, '_blank', 'noopener');
         if (newWindow) {
           newWindow.opener = null;
-        } else {
-          window.location.href = destinationUrl;
         }
       } else {
         window.location.href = destinationUrl;
