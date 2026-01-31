@@ -1,0 +1,73 @@
+{
+  "apiVersion": "1.0.0",
+  "generatedAt": "2026-01-31T00:00:00Z",
+  "vendors": [
+    {
+      "slug": "dave-blake",
+      "plan": "featured",
+      "placements": [
+        "spotlight"
+      ]
+    },
+    {
+      "slug": "nahid-kholghi",
+      "plan": "basic",
+      "placements": []
+    },
+    {
+      "slug": "kacper-czerniak",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-002",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-003",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-004",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-005",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-006",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-007",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-008",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-009",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "vendor-010",
+      "plan": "unpaid",
+      "placements": []
+    },
+    {
+      "slug": "byron-bay",
+      "plan": "unpaid",
+      "placements": []
+    }
+  ]
+}
