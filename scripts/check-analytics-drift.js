@@ -36,12 +36,10 @@ async function fetchSchema() {
 
   const res = await fetch(SCHEMA_URL, { method: 'GET', headers });
   if (!res.ok) {
-    // If the endpoint is unavailable/unauthorized, treat as non-fatal drift check skip.
-    if ([401, 403, 404].includes(res.status)) {
-      console.warn(`Schema fetch skipped (status ${res.status}); endpoint unavailable or protected.`);
-      return null;
-    }
-    throw new Error(`Schema fetch failed: ${res.status}`);
+    const body = await res.text().catch(() => '');
+    const hint =
+      'Set SCHEMA_TOKEN (and optionally SCHEMA_URL) in repo secrets if the schema requires auth.';
+    throw new Error(`Schema fetch failed: ${res.status}. ${hint} Body: ${body.slice(0, 200)}`);
   }
   return res.json();
 }
@@ -93,11 +91,6 @@ async function main() {
   try {
     const baked = readBakedConfig();
     const live = await fetchSchema();
-
-    if (!live) {
-      console.warn('analytics-drift: skipping comparison; using baked config only.');
-      process.exit(0);
-    }
     const diffs = diffContract(baked, live);
 
     if (diffs.length === 0) {
