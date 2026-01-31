@@ -1,6 +1,1 @@
-{
-  "allowedPages": ["profile", "spotlight", "featured", "basic", "unpaid", "article"],
-  "allowedTiers": ["spotlight", "featured", "basic", "unpaid"],
-  "vendorSlugRegex": "^[a-z0-9-]+$",
-  "internalDomains": ["startmyloveengine.com", "go.startmyloveengine.com"]
-}
+{"apiVersion":"1.0.0","allowedPages":["profile","spotlight","featured","basic","unpaid","article"],"allowedPlans":["unpaid","basic","featured"],"allowedPlacements":["spotlight","editor_pick","home_feature"],"allowedClickTypes":["website","instagram"],"internalDomains":["startmyloveengine.com","go.startmyloveengine.com"],"vendorSlugRegex":"^[a-z0-9-]+$","defaultRanges":["7d","28d","90d"],"resolved":{"vendorSlugRegex":"^[a-z0-9-]+$","allowedPages":["profile","spotlight","featured","basic","unpaid","article"],"allowedPlans":["unpaid","basic","featured"],"allowedPlacements":["spotlight","editor_pick","home_feature"],"allowedClickTypes":["website","instagram"],"internalDomains":["startmyloveengine.com","go.startmyloveengine.com"],"visitAllowedOrigins":["https://startmyloveengine.com","https://www.startmyloveengine.com"],"exportAllowedOrigins":["https://startmyloveengine.com","https://www.startmyloveengine.com"],"defaultRanges":["7d","28d","90d"]}}
