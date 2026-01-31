@@ -1,0 +1,15 @@
+{
+  "name": "startmyloveengine-static",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:site && npm run test:drift",
+    "test:unit": "node --test tests/click.test.js",
+    "test:site": "node --test tests/validate.test.js",
+    "test:drift": "node --test tests/drift.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
