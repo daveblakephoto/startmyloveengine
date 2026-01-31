@@ -46,7 +46,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://startmyloveengine.com/directory/spinelli-kilcollin/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startmyloveengine.com/directory/sun-ranch-byron/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://startmyloveengine.com/editorial/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
