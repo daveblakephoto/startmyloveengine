@@ -20,4 +20,7 @@ jobs:
           node-version: 20
 
       - name: Run drift check
+        env:
+          SCHEMA_TOKEN: ${{ secrets.SCHEMA_TOKEN }}
+          SCHEMA_URL: ${{ secrets.SCHEMA_URL }}
         run: node scripts/check-analytics-drift.js

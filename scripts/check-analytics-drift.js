@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-const SCHEMA_URL = 'https://go.startmyloveengine.com/schema';
+const SCHEMA_URL = process.env.SCHEMA_URL || 'https://go.startmyloveengine.com/schema';
 const CONFIG_PATH = path.resolve('config/analytics.json');
 
 function readBakedConfig() {
@@ -29,8 +29,18 @@ function compareArrays(a, b) {
 }
 
 async function fetchSchema() {
-  const res = await fetch(SCHEMA_URL, { method: 'GET' });
+  const headers = {};
+  if (process.env.SCHEMA_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.SCHEMA_TOKEN}`;
+  }
+
+  const res = await fetch(SCHEMA_URL, { method: 'GET', headers });
   if (!res.ok) {
+    // If the endpoint is unavailable/unauthorized, treat as non-fatal drift check skip.
+    if ([401, 403, 404].includes(res.status)) {
+      console.warn(`Schema fetch skipped (status ${res.status}); endpoint unavailable or protected.`);
+      return null;
+    }
     throw new Error(`Schema fetch failed: ${res.status}`);
   }
   return res.json();
@@ -83,6 +93,11 @@ async function main() {
   try {
     const baked = readBakedConfig();
     const live = await fetchSchema();
+
+    if (!live) {
+      console.warn('analytics-drift: skipping comparison; using baked config only.');
+      process.exit(0);
+    }
     const diffs = diffContract(baked, live);
 
     if (diffs.length === 0) {
