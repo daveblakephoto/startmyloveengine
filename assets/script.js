@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const hasVendorProfile = Boolean(document.querySelector('.vendor-profile-hero'));
   const pageVendorSlug = getVendorSlugFromPage();
   const pageVendorTier = document.body?.dataset.vendorTier || '';
+  const vendorMeta = (typeof window !== 'undefined' && window.__VENDOR_META__) || {};
+  const pageVendorPlan = vendorMeta.plan || document.body?.dataset.vendorPlan || '';
+  const pageVendorPlacements = vendorMeta.placements || document.body?.dataset.vendorPlacements;
   const searchInput = document.getElementById('search');
   const filterButtons = document.querySelectorAll('.filter-btn');
   const cityFilter = document.getElementById('cityFilter');
@@ -132,10 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
     sortVendorCards();
   }
 
-  if (hasVendorProfile && pageVendorSlug && pageVendorTier) {
+  if (hasVendorProfile && pageVendorSlug) {
     trackVisit({
       vendor: pageVendorSlug,
       page: 'profile',
+      plan: pageVendorPlan,
+      placements: pageVendorPlacements,
       tier: pageVendorTier
     });
   } else if (hasVendorProfile) {
@@ -143,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.warn('analytics: visit skipped (missing vendor slug or tier)', {
       vendor: pageVendorSlug || null,
       tier: pageVendorTier || null,
+      plan: pageVendorPlan || null,
       url: window.location.href
     });
   }
