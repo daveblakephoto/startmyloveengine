@@ -29,19 +29,33 @@ function compareArrays(a, b) {
 }
 
 async function fetchSchema() {
-  const headers = {};
+  const headers = {
+    'User-Agent': 'analytics-drift-check/1.0 (github-actions)',
+    Accept: 'application/json'
+  };
   if (process.env.SCHEMA_TOKEN) {
     headers.Authorization = `Bearer ${process.env.SCHEMA_TOKEN}`;
   }
 
-  const res = await fetch(SCHEMA_URL, { method: 'GET', headers });
+  const res = await fetch(SCHEMA_URL, {
+    method: 'GET',
+    headers,
+    redirect: 'follow'
+  });
   if (!res.ok) {
     const body = await res.text().catch(() => '');
     const hint =
       'Set SCHEMA_TOKEN (and optionally SCHEMA_URL) in repo secrets if the schema requires auth.';
     throw new Error(`Schema fetch failed: ${res.status}. ${hint} Body: ${body.slice(0, 200)}`);
   }
-  return res.json();
+  const contentType = res.headers.get('content-type') || '';
+  const bodyText = await res.text();
+  if (contentType.includes('text/html')) {
+    throw new Error(
+      `Schema fetch returned HTML (likely a Cloudflare/WAF challenge). Body: ${bodyText.slice(0, 200)}`
+    );
+  }
+  return JSON.parse(bodyText);
 }
 
 function pick(obj, keys) {

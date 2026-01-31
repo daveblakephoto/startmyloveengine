@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 20
 
+      - name: Validate schema env
+        run: |
+          if [ -z "${{ secrets.SCHEMA_URL }}" ]; then
+            echo "SCHEMA_URL not set; defaulting to https://go.startmyloveengine.com/schema"
+          fi
       - name: Run drift check
         env:
           SCHEMA_TOKEN: ${{ secrets.SCHEMA_TOKEN }}
