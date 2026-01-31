@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npm run test:unit && npm run test:site && npm run test:drift",
+    "test": "npm run test:unit && npm run test:site && npm run test:drift && npm run test:vendor-meta",
     "test:unit": "node --test tests/click.test.js",
     "test:site": "node --test tests/validate.test.js",
-    "test:drift": "node --test tests/drift.test.js"
+    "test:drift": "node --test tests/drift.test.js",
+    "test:vendor-meta": "node scripts/check-vendor-metadata-drift.js",
+    "sync:vendor-meta": "node scripts/fetch-vendor-metadata.js"
   },
   "engines": {
     "node": ">=18"
