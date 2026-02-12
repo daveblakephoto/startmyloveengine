@@ -10,6 +10,26 @@ function getVendorSlugFromPage() {
   return match ? match[1] : '';
 }
 
+function normalizePath(path) {
+  if (!path) {
+    return '/';
+  }
+  const clean = path.replace(/\/+$/, '');
+  return clean === '' ? '/' : clean;
+}
+
+function setCurrentNavLink() {
+  const currentPath = normalizePath(window.location.pathname);
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const linkPath = normalizePath(new URL(link.href, window.location.origin).pathname);
+    if (linkPath === currentPath) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   // Preload analytics config so visit validation uses the shared JSON allowlists.
   primeAnalyticsConfig();
@@ -224,24 +244,48 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const hamburger = document.querySelector('.nav-hamburger');
   const navLinks = document.querySelector('.nav-links');
+  setCurrentNavLink();
   
   if (hamburger && navLinks) {
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+    }
+
+    function openMenu() {
+      hamburger.classList.add('active');
+      navLinks.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+    }
+
     hamburger.addEventListener('click', function() {
-      this.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      const isOpen = navLinks.classList.contains('active');
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
     });
     
     document.addEventListener('click', function(e) {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        closeMenu();
+        hamburger.focus();
       }
     });
     
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function() {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        closeMenu();
       });
     });
   }
