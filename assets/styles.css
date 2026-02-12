@@ -226,6 +226,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
+.section-deck {
+  max-width: 64ch;
+  color: var(--color-secondary);
+  line-height: 1.75;
+  margin: calc(-1 * var(--spacing-md)) 0 var(--spacing-lg);
+}
+
 .vendor-card-large {
   background: var(--color-white);
   border-radius: 4px;
@@ -295,6 +302,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .coming-soon p + p {
   margin-top: var(--spacing-sm);
+}
+
+.home-explore-paths .directory-links {
+  margin-top: var(--spacing-md);
+}
+
+.home-explore-paths .directory-links a {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.9rem;
 }
 
 .directory-header {
