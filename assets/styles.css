@@ -334,6 +334,14 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.7;
 }
 
+.directory-intro {
+  max-width: 68ch;
+  margin: 1.25rem auto 0;
+  color: var(--color-secondary);
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
 .directory-divider {
   width: 120px;
   height: 1px;
