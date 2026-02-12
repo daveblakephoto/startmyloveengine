@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "npm run sitemap:generate",
+    "sitemap:generate": "node scripts/generate-sitemap.js",
     "test": "npm run test:unit && npm run test:site && npm run test:drift && npm run test:vendor-meta",
     "test:unit": "node --test tests/click.test.js",
     "test:site": "node --test tests/validate.test.js",

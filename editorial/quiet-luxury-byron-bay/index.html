@@ -32,6 +32,55 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/"
+    },
+    "url": "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/",
+    "headline": "Quiet Luxury in Byron Bay",
+    "description": "Jake Villegas and Cameron Field are photographed by Dave Blake at Sun Ranch Byron Bay in a quiet-luxury engagement editorial with Spinelli Kilcollin.",
+    "datePublished": "2026-01-31T00:00:00Z",
+    "dateModified": "2026-02-12T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Dave Blake",
+      "url": "https://startmyloveengine.com/directory/dave-blake/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "StartMyLoveEngine",
+      "url": "https://startmyloveengine.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://startmyloveengine.com/favicon-512.png"
+      }
+    },
+    "image": [
+      "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_207.jpg",
+      "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_137.jpg",
+      "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_093.jpg"
+    ],
+    "articleSection": "Feature",
+    "keywords": [
+      "Editorial engagement photography",
+      "Same-sex engagement photography",
+      "Quiet luxury wedding style",
+      "Byron Bay engagement",
+      "Luxury wedding jewellery",
+      "Editorial wedding venue Byron Bay",
+      "Dave Blake photography"
+    ],
+    "inLanguage": "en-AU",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://startmyloveengine.com/editorial/"
+    }
+  }
+  </script>
   <meta property="og:url" content="https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/">
   <meta property="og:site_name" content="StartMyLoveEngine">
   <meta name="twitter:creator" content="@startmyloveengine">
@@ -202,6 +251,9 @@
     <p><strong>Additional vendors</strong> &mdash; None listed.</p>
     <p>StartMyLoveEngine's <a href="/directory/byron-bay/">Byron Bay vendor community</a> and <a href="/editorial/">The Edit</a> collect related stories and collaborators.</p>
 
+    <h2>Related Discovery</h2>
+    <p>Explore the profiles for <a href="/directory/sun-ranch-byron/">Sun Ranch</a>, <a href="/directory/spinelli-kilcollin/">Spinelli Kilcollin</a>, and <a href="/directory/dave-blake/">Dave Blake</a>, then continue through the <a href="/directory/byron-bay/">Byron Bay venues and vendors edition</a> for connected local collaborators.</p>
+
     <ul class="article-tags" hidden>
       <li>editorial engagement photography</li>
       <li>same-sex engagement photography</li>
@@ -291,60 +343,10 @@
       const dateEl = document.getElementById('article-date');
       const publishedDateIso = '2026-01-31';
       const publishedDateDisplay = 'January 31, 2026';
-      const publishedDateTime = '2026-01-31T00:00:00Z';
       if (dateEl) {
         dateEl.setAttribute('datetime', publishedDateIso);
         dateEl.textContent = publishedDateDisplay;
       }
-
-      const articleSchema = {
-        "@type": "Article",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/"
-        },
-        "headline": "Quiet Luxury in Byron Bay",
-        "description": "Jake Villegas and Cameron Field are photographed by Dave Blake at Sun Ranch Byron Bay in a quiet-luxury engagement editorial with Spinelli Kilcollin.",
-        "author": {
-          "@type": "Person",
-          "name": "Dave Blake"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "StartMyLoveEngine",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://startmyloveengine.com/favicon-512.png"
-          }
-        },
-        "image": [
-          "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_207.jpg",
-          "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_137.jpg",
-          "https://startmyloveengine.com/editorial/quiet-luxury-byron-bay/SK_CamXJake_093.jpg"
-        ],
-        "datePublished": publishedDateTime,
-        "dateModified": publishedDateTime,
-        "wordCount": words,
-        "timeRequired": 'PT' + readingTime + 'M',
-        "articleSection": "Feature",
-        "keywords": ["Editorial engagement photography", "Same-sex engagement photography", "Quiet luxury wedding style", "Byron Bay engagement", "Luxury wedding jewellery", "Editorial wedding venue Byron Bay", "Dave Blake photography"],
-        "mentions": [
-          {
-            "@type": "Person",
-            "name": "Cameron Field",
-            "sameAs": [
-              "https://www.instagram.com/cameronfield_/",
-              "https://www.tiktok.com/@cameronfield_"
-            ]
-          }
-        ],
-        "inLanguage": "en-AU"
-      };
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(articleSchema);
-      document.head.appendChild(script);
     })();
   </script>
 </body>

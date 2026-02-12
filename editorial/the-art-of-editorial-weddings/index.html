@@ -32,6 +32,51 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://startmyloveengine.com/editorial/the-art-of-editorial-weddings/"
+    },
+    "url": "https://startmyloveengine.com/editorial/the-art-of-editorial-weddings/",
+    "headline": "The Art of Editorial Weddings",
+    "description": "A cultural editorial on modern wedding storytelling, craft, and the evolving language of editorial weddings.",
+    "datePublished": "2026-01-25T00:00:00Z",
+    "dateModified": "2026-02-12T00:00:00Z",
+    "author": {
+      "@type": "Person",
+      "name": "Dave Blake",
+      "url": "https://startmyloveengine.com/directory/dave-blake/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "StartMyLoveEngine",
+      "url": "https://startmyloveengine.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://startmyloveengine.com/favicon-512.png"
+      }
+    },
+    "image": [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop"
+    ],
+    "articleSection": "Feature",
+    "keywords": [
+      "editorial weddings",
+      "storytelling",
+      "wedding photography",
+      "Byron Bay",
+      "creative direction"
+    ],
+    "inLanguage": "en-AU",
+    "isPartOf": {
+      "@type": "WebPage",
+      "@id": "https://startmyloveengine.com/editorial/"
+    }
+  }
+  </script>
   <meta property="og:url" content="https://startmyloveengine.com/editorial/the-art-of-editorial-weddings/">
   <meta property="og:site_name" content="StartMyLoveEngine">
   <meta name="twitter:creator" content="@startmyloveengine">
@@ -181,6 +226,9 @@
 
     <p>If you are starting your planning, begin with the story you want to tell and the feeling you want to carry. The rest is a careful edit. The most compelling weddings are never the loudest. They are the most considered.</p>
 
+    <h2>Related Discovery</h2>
+    <p>For applied examples of this approach, read <a href="/editorial/quiet-luxury-byron-bay/">Quiet Luxury in Byron Bay</a>, then explore the profiles of <a href="/directory/dave-blake/">Dave Blake</a>, <a href="/directory/nahid-kholghi/">Nahid Kholghi</a>, and <a href="/directory/kacper-czerniak/">Kacper Czerniak</a> in the <a href="/directory/byron-bay/">Byron Bay venues and vendors edition</a>.</p>
+
     <ul class="article-tags" hidden>
       <li>editorial</li>
       <li>storytelling</li>
@@ -269,82 +317,10 @@
       const dateEl = document.getElementById('article-date');
       const publishedDateIso = '2026-01-25';
       const publishedDateDisplay = 'January 25, 2026';
-      const publishedDateTime = '2026-01-25T00:00:00Z';
       if (dateEl) {
         dateEl.setAttribute('datetime', publishedDateIso);
         dateEl.textContent = publishedDateDisplay;
       }
-
-      const articleSchema = {
-        "@type": "Article",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://startmyloveengine.com/editorial/the-art-of-editorial-weddings/"
-        },
-        "headline": "The Art of Editorial Weddings",
-        "description": "A cultural editorial on modern wedding storytelling, craft, and the evolving language of editorial weddings.",
-        "author": {
-          "@type": "Person",
-          "name": "Dave Blake"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "StartMyLoveEngine",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://startmyloveengine.com/favicon-512.png"
-          }
-        },
-        "image": [
-          "https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop"
-        ],
-        "datePublished": publishedDateTime,
-        "dateModified": publishedDateTime,
-        "wordCount": words,
-        "timeRequired": 'PT' + readingTime + 'M',
-        "articleSection": "Feature",
-        "keywords": [
-          "editorial weddings",
-          "storytelling",
-          "wedding photography",
-          "Byron Bay",
-          "creative direction"
-        ]
-      };
-
-      const breadcrumbSchema = {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "home",
-            "item": "https://startmyloveengine.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "The Edit",
-            "item": "https://startmyloveengine.com/editorial/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "The Art of Editorial Weddings",
-            "item": "https://startmyloveengine.com/editorial/the-art-of-editorial-weddings/"
-          }
-        ]
-      };
-
-      const schema = {
-        "@context": "https://schema.org",
-        "@graph": [articleSchema, breadcrumbSchema]
-      };
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
     })();
   </script>
 </body>
