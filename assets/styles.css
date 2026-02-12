@@ -293,6 +293,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+.coming-soon p + p {
+  margin-top: var(--spacing-sm);
+}
+
 .directory-header {
   text-align: center;
   padding-bottom: var(--spacing-md);
@@ -1688,6 +1692,10 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: var(--spacing-lg);
+}
+
+.home-editorial-proof .editorial-grid {
+  max-width: 100%;
 }
 
 @media (max-width: 420px) {
